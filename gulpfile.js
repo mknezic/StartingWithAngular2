@@ -37,7 +37,9 @@ gulp.task('serve', ['ts-lint', 'compile-ts'], function(){
 	gulp.watch([config.allTs], ['ts-lint', 'compile-ts']);
 		
 	browserSync({
-		port: process.env.PORT,
+		host: '127.0.0.1',
+		port: 59080,
+		//#process.env.PORT,
 		file: ['index.html', '**/*.js'],
 		injectChanges: true,
 		logFileChanges: false,
